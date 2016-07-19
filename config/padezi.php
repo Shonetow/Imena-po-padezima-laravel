@@ -6,9 +6,9 @@ return [
      * Ovde možete promeniti vrednosti koje u vašoj aplikaciji definišu pol.
      *
      */
-    'zensko' => 'z',
+    'zensko' => 1,
 
-    'musko' => 'm',
+    'musko' => 2,
 
     /**
      * Izuzeci imena za koje je nemoguće napisati
@@ -22,7 +22,7 @@ return [
     ],
 
     'izuzeci_muskih' => [
-        'Saša', 'Paša', 'Jakša'
+        'Saša', 'Paša', 'Jakša', 'Vanja', 'Sanja'
     ]
 
 ];

@@ -1,8 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-
-class PadezManagerTest extends PHPUnit_Framework_TestCase
+class PadezManagerTest extends TestCase
 {
     /**
      * @var \Shonetow\Padezi\Padez
@@ -11,6 +9,7 @@ class PadezManagerTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        parent::setUp();
         $this->padez = new Shonetow\Padezi\PadezManager();
     }
 

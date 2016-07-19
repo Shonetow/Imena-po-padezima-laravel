@@ -100,6 +100,8 @@ class PadezManager
      *
      * @param $ime
      * @param $gender
+     *
+     * @return $this
      */
     public function setUp($ime, $gender)
     {
@@ -142,13 +144,17 @@ class PadezManager
 
     /**
      * @param $gender
+     *
+     * @return bool
      */
     public function setGender($gender)
     {
-        if ($gender != $this->config['zensko'] && $gender != $this->config['musko']) {
-            throw new \InvalidArgumentException('Argument za pol nije validan.');
+        if ($gender == $this->config['zensko'] || $gender == $this->config['musko'] || $gender == 0) {
+            $this->pol = $gender;
+
+            return true;
         }
-        $this->pol = $gender;
+        throw new \InvalidArgumentException('Argument za pol nije validan. Dobio "' . $gender . '", a može biti ' . $this->config['zensko'] . ' ili ' . $this->config['musko'] . '');
     }
 
     /**
@@ -418,6 +424,8 @@ class PadezManager
                 return $this->showName('e', 1);
             } else if ($this->endsWith(array( 'tar', 'leksandar' ))) {
                 return $this->showName('re', 2);
+            } else if ($this->endsWith('nja')) {
+                return $this->showName();
             } else if ($this->endsWith('a')) {
                 return $this->showName('o', 1);
             } else if ($this->endsWithVowel()) {

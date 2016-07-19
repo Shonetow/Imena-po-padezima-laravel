@@ -1,6 +1,6 @@
 {
-    "name": "shonetow/imena-po-padezima",
-    "description": "Promena imena po padezima",
+    "name": "shonetow/imena-po-padezima-laravel",
+    "description": "Promena imena po padezima za Laravel 5",
     "license": "MIT",
     "authors": [
         {
